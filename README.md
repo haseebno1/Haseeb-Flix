@@ -1,11 +1,17 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Haseeb-Flix logo" width="140" />
+  <img src="screenshots/logo.png" alt="Haseeb-Flix logo" width="140" />
 </p>
 
 <h1 align="center">Haseeb-Flix</h1>
 
 <p align="center">
   A sleek, dark-themed Android app for discovering movies and TV shows, built with Kotlin and Jetpack Compose and powered by the TMDB API.
+</p>
+
+<p align="center">
+  <a href="https://github.com/haseebno1/Haseeb-Flix/releases/latest/download/app-release.apk">
+    <img src="https://img.shields.io/badge/Download_APK-v1.0.6-E50914?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" />
+  </a>
 </p>
 
 <p align="center">
