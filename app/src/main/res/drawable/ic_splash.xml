@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Ambient dark container background -->
+    <path
+        android:fillColor="#131313"
+        android:pathData="M112,0L400,0A112,112 0,0 1,512 112L512,400A112,112 0,0 1,400 512L112,512A112,112 0,0 1,0 400L0,112A112,112 0,0 1,112 0Z" />
+
+    <!-- Left Pillar (Sleek Crimson Pillar) -->
+    <path
+        android:fillColor="#E50914"
+        android:pathData="M144,116C144,100 156,88 172,88L214,88C224,88 232,96 232,106L232,406C232,416 224,424 214,424L172,424C156,424 144,412 144,396Z" />
+
+    <!-- Right Pillar (Dark Crimson Isometric Slab) -->
+    <path
+        android:fillColor="#9C040E"
+        android:pathData="M296,106C296,96 304,88 314,88L356,88C372,88 384,100 384,116L384,396C384,412 372,424 356,424L314,424C304,424 296,416 296,406Z" />
+
+    <!-- Connective Forward Play Triangle (White Negative Space H Center) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M216,188L336,256L216,324Z" />
+
+    <!-- Core Inner Reflective Core -->
+    <path
+        android:fillColor="#E50914"
+        android:pathData="M224,204L314,256L224,308Z" />
+
+    <!-- Center Bright Highlight -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M236,226L290,256L236,286Z" />
+</vector>
