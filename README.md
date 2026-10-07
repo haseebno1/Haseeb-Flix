@@ -102,10 +102,16 @@ Haseeb-Flix/
 
 ```
 </details>
+
+
 ## 👨‍💻 Author
-Developed by **Abdul Haseeb** – Lead Mobile & App Architect
+Developed by **Abdul Haseeb** — *Lead Mobile & Application Architect*
  * **GitHub:** @haseebno1
-## 📜 Acknowledgements & Legal
-Media catalog powered by The Movie Database (TMDB).
-*Disclaimer: Haseeb-Flix uses the TMDB API for catalog information but is not endorsed or certified by TMDB.*
-<p align="center"><b>If you enjoy streaming with Haseeb-Flix, leave a ⭐ on GitHub to support development!</b></p>w
+## 📜 Acknowledgements & Legal Notice
+Media catalog data is powered by **The Movie Database (TMDB)**.
+> **Disclaimer:** *Haseeb-Flix utilizes the TMDB API to fetch catalog information and media metadata but is independent and not officially endorsed or certified by TMDB.*
+> 
+<p align="center">
+<b>Enjoying Haseeb-Flix? Give this repository a ⭐ on GitHub to support ongoing development!</b>
+</p>
+
