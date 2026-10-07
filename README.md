@@ -1,140 +1,111 @@
+
 <p align="center">
-  <img src="screenshots/logo.png" alt="Haseeb-Flix logo" width="140" />
+  <img src="screenshots/logo.png" alt="Haseeb-Flix Logo" width="140" />
 </p>
 
 <h1 align="center">Haseeb-Flix</h1>
 
 <p align="center">
-  A sleek, dark-themed Android app for discovering movies and TV shows, built with Kotlin and Jetpack Compose and powered by the TMDB API.
+  <b>Your ultimate ad-free Android app to stream movies, watch TV show episodes, and discover trending entertainment for free.</b>
 </p>
 
 <p align="center">
   <a href="https://github.com/haseebno1/Haseeb-Flix/releases/latest/download/app-release.apk">
-    <img src="https://img.shields.io/badge/Download_APK-v1.0.6-E50914?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" />
+    <img src="https://img.shields.io/badge/📥_Download_APK-v1.0.6-E50914?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white" alt="Android" />
-  <img src="https://img.shields.io/badge/Kotlin-Jetpack%20Compose-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin / Jetpack Compose" />
-  <img src="https://img.shields.io/badge/API-TMDB-01B4E4" alt="TMDB API" />
+  <img src="https://img.shields.io/badge/Platform-Android_8.0+-3DDC84?logo=android&logoColor=white" alt="Android" />
+  <img src="https://img.shields.io/badge/Streaming-100%25_Free-00C853" alt="Free Streaming" />
+  <img src="https://img.shields.io/badge/Ads-Zero_Ads-E50914" alt="No Ads" />
   <img src="https://img.shields.io/badge/Version-1.0.6-E50914" alt="Version 1.0.6" />
 </p>
 
 ---
 
-## 📱 Screenshots
+## 🎬 Why Choose Haseeb-Flix?
+
+* 🍿 **Instant Movie & TV Streaming:** Stream trending movies and full TV show episodes directly on your Android device with seamless playback.
+* 📺 **One-Tap Episode Playback:** Select seasons and episodes effortlessly with the built-in *Play S1 E1* player for TV series.
+* 🔍 **Smart Content Search:** Search across thousands of titles with instant filters for movies and TV shows.
+* ❤️ **Personal Watchlist:** Bookmark your favorite movies and shows to build a custom streaming queue.
+* 🛡️ **Ad-Free & No Subscription:** Enjoy a premium, dark-themed streaming interface with zero popups, zero forced ads, and no account required.
+
+---
+
+## 📲 How to Install & Watch (Android APK)
+
+1. Tap the **[Download APK](https://github.com/haseebno1/Haseeb-Flix/releases/latest/download/app-release.apk)** badge at the top of this page on your Android device.
+2. Open the downloaded `.apk` file from your browser downloads or file manager.
+3. If prompted by your device, enable **"Install from unknown sources"**.
+4. Open **Haseeb-Flix** and start streaming immediately!
+
+---
+
+## 📱 App Screenshots
 
 <table>
   <tr>
-    <td align="center"><img src="screenshots/01_home.jpg" width="200" /><br /><sub><b>Home</b></sub></td>
-    <td align="center"><img src="screenshots/02_movie_details.jpg" width="200" /><br /><sub><b>Movie Details</b></sub></td>
-    <td align="center"><img src="screenshots/03_discover.jpg" width="200" /><br /><sub><b>Discover</b></sub></td>
-    <td align="center"><img src="screenshots/04_search_movies.jpg" width="200" /><br /><sub><b>Search – Movies</b></sub></td>
+    <td align="center"><img src="screenshots/01_home.jpg" width="200" /><br /><sub><b>Home Stream Feed</b></sub></td>
+    <td align="center"><img src="screenshots/02_movie_details.jpg" width="200" /><br /><sub><b>Movie Stream Player</b></sub></td>
+    <td align="center"><img src="screenshots/03_discover.jpg" width="200" /><br /><sub><b>Discover Titles</b></sub></td>
+    <td align="center"><img src="screenshots/04_search_movies.jpg" width="200" /><br /><sub><b>Search Movies</b></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="screenshots/05_search_tv.jpg" width="200" /><br /><sub><b>Search – TV Shows</b></sub></td>
-    <td align="center"><img src="screenshots/06_wishlist.jpg" width="200" /><br /><sub><b>Wishlist</b></sub></td>
-    <td align="center"><img src="screenshots/07_tv_details.jpg" width="200" /><br /><sub><b>TV Show Details</b></sub></td>
-    <td align="center"><img src="screenshots/08_settings.jpg" width="200" /><br /><sub><b>Settings & About</b></sub></td>
+    <td align="center"><img src="screenshots/05_search_tv.jpg" width="200" /><br /><sub><b>Search TV Series</b></sub></td>
+    <td align="center"><img src="screenshots/06_wishlist.jpg" width="200" /><br /><sub><b>Saved Watchlist</b></sub></td>
+    <td align="center"><img src="screenshots/07_tv_details.jpg" width="200" /><br /><sub><b>Seasons & Episode Play</b></sub></td>
+    <td align="center"><img src="screenshots/08_settings.jpg" width="200" /><br /><sub><b>Settings & Info</b></sub></td>
   </tr>
 </table>
 
 ---
 
-## ✨ Features
+<details>
+<summary><b>🛠️ Technical Specifications & Build Instructions (Click to Expand)</b></summary>
 
-- **Home feed** with *Most Popular* and *Now Playing* sections, each split into Movies and TV Shows.
-- **Discover** rows of trending titles with ratings, genres and poster art.
-- **Search** across movies and TV shows, with a tabbed view to switch between the two.
-- **Detail screens** with poster, release year, runtime, genres, rating, overview and cast.
-- **TV show support** with season and episode selectors and a one-tap *Play S1 E1* button.
-- **Wishlist** to save your favorite movies and shows, with a heart toggle on every details page.
-- **Modern dark UI** with a red accent, rounded cards and a bottom navigation bar (Home, Search, Wishlist, Settings).
-- **Settings & About** with a developer spotlight, a link to the source code, the privacy policy and the app version.
+<br />
 
----
+### Tech Stack
 
-## 🛠️ Tech Stack
-
-| Area | Technology |
+| Layer | Technology |
 | --- | --- |
-| Language | Kotlin |
-| UI | Jetpack Compose |
-| Platform | Android |
-| Data source | [TMDB API](https://www.themoviedb.org/documentation/api) |
+| **Language** | Kotlin |
+| **UI Framework** | Jetpack Compose |
+| **Target Platform** | Android |
+| **Media Metadata** | [TMDB API](https://www.themoviedb.org/documentation/api) |
 
----
+### Building from Source
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Android Studio](https://developer.android.com/studio) (latest stable version recommended)
-- JDK 17 or newer
-- A free [TMDB API key](https://www.themoviedb.org/settings/api)
-
-### Setup
-
-1. **Clone the repository**
-
+1. **Clone Repository**
    ```bash
-   git clone https://github.com/haseebno1/Haseeb-Flix.git
+   git clone [https://github.com/haseebno1/Haseeb-Flix.git](https://github.com/haseebno1/Haseeb-Flix.git)
    cd Haseeb-Flix
-   ```
 
-2. **Add your TMDB API key**
-
-   Add your key to `local.properties` in the project root:
-
+```
+ 2. **Set API Keys**
+   Add your TMDB API key inside local.properties:
    ```properties
    TMDB_API_KEY=your_api_key_here
+   
    ```
-
-3. **Open the project** in Android Studio and let Gradle sync.
-
-4. **Run the app** on an emulator or a physical device (**Run ▶ Run 'app'**).
-
----
-
-## 📂 Project Structure
-
+ 3. **Compile & Run**
+   Open in Android Studio (JDK 17+) and run on an Android emulator or test device (**Run ▶ Run 'app'**).
+### Directory Structure
 ```text
 Haseeb-Flix/
-├── app/            # Android application module
-├── assets/         # README assets (logo)
-├── screenshots/    # App screenshots used in this README
+├── app/            # Primary Android source module
+├── assets/         # App icons and graphics
+├── screenshots/    # Preview images for documentation
 └── README.md
+
 ```
-
----
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m "Add amazing feature"`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
+</details>
 ## 👨‍💻 Author
-
-**Abdul Haseeb** – Lead Mobile & App Architect
-
-- GitHub: [@haseebno1](https://github.com/haseebno1)
-
----
-
-## 🙏 Acknowledgements
-
-- [The Movie Database (TMDB)](https://www.themoviedb.org/) for the movie and TV data.
-
-> This product uses the TMDB API but is not endorsed or certified by TMDB.
-
----
-
-<p align="center">If you like this project, give it a ⭐ on GitHub!</p>
+Developed by **Abdul Haseeb** – Lead Mobile & App Architect
+ * **GitHub:** @haseebno1
+## 📜 Acknowledgements & Legal
+Media catalog powered by The Movie Database (TMDB).
+*Disclaimer: Haseeb-Flix uses the TMDB API for catalog information but is not endorsed or certified by TMDB.*
+<p align="center"><b>If you enjoy streaming with Haseeb-Flix, leave a ⭐ on GitHub to support development!</b></p>w
