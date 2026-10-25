@@ -1,0 +1,3 @@
+• Rebranded as HaseebFlix with a new application ID (com.haseebno1.haseebflix). This installs alongside older builds and does not carry over your watchlist.
+• Versioned, signed releases published from tags, with SHA-256 checksums.
+• Added F-Droid style store metadata and refreshed documentation.

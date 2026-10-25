@@ -1,0 +1,102 @@
+name: Release
+
+# Publish by pushing a tag that matches versionName in app/build.gradle.kts, e.g.:
+#   git tag v1.1.0 && git push origin v1.1.0
+on:
+  push:
+    tags: ["v[0-9]+.[0-9]+.[0-9]+*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read version and check it matches the tag
+        id: ver
+        run: |
+          NAME=$(sed -n 's/.*versionName = "\(.*\)".*/\1/p' app/build.gradle.kts)
+          CODE=$(sed -n 's/.*versionCode = \([0-9]*\).*/\1/p' app/build.gradle.kts)
+          TAG="${GITHUB_REF_NAME#v}"
+          if [ "$NAME" != "$TAG" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match versionName $NAME in app/build.gradle.kts"
+            exit 1
+          fi
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+
+      - name: Check signing and API key secrets exist
+        env:
+          KS: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KSP: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KA: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KP: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          TMDB: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          # Without these the build would silently fall back to the debug key, which must never be released.
+          for v in KS KSP KA KP TMDB; do
+            if [ -z "${!v}" ]; then echo "::error::Missing repository secret for $v (see README, Releasing)"; exit 1; fi
+          done
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Write keystore
+        env:
+          KS: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KSP: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KA: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KP: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          echo "$KS" | base64 -d > "$RUNNER_TEMP/release.jks"
+          {
+            echo "storeFile=$RUNNER_TEMP/release.jks"
+            echo "storePassword=$KSP"
+            echo "keyAlias=$KA"
+            echo "keyPassword=$KP"
+          } > keystore.properties
+
+      - name: Build signed release APK
+        env:
+          HASEEBFLIX_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: ./gradlew :app:assembleRelease --stacktrace
+
+      - name: Name the APK and verify its signature
+        id: apk
+        run: |
+          SRC=$(ls app/build/outputs/apk/release/*.apk | head -n 1)
+          OUT="HaseebFlix-v${{ steps.ver.outputs.name }}.apk"
+          cp "$SRC" "$OUT"
+          APKSIGNER=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -n 1)
+          "$APKSIGNER" verify --print-certs "$OUT" | tee signer.txt
+          if grep -qi "Android Debug" signer.txt; then echo "::error::APK is signed with the debug key"; exit 1; fi
+          sha256sum "$OUT" > "$OUT.sha256"
+          echo "file=$OUT" >> "$GITHUB_OUTPUT"
+
+      - name: Build release notes
+        run: |
+          CL="fastlane/metadata/android/en-US/changelogs/${{ steps.ver.outputs.code }}.txt"
+          {
+            if [ -f "$CL" ]; then cat "$CL"; else echo "See the commit history for changes."; fi
+            echo
+            echo "SHA-256:"
+            echo '```'
+            cat "${{ steps.apk.outputs.file }}.sha256"
+            echo '```'
+          } > notes.md
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: HaseebFlix ${{ steps.ver.outputs.name }}
+          body_path: notes.md
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          files: |
+            ${{ steps.apk.outputs.file }}
+            ${{ steps.apk.outputs.file }}.sha256

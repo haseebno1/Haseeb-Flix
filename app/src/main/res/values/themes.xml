@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright 2022 Afig Aliyev
+     Modifications Copyright 2026 Abdul Haseeb
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,16 +17,16 @@
 -->
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Cinemax" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.HaseebFlix" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/primaryDark</item>
         <item name="android:navigationBarColor">@color/primaryDark</item>
         <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
     </style>
 
-    <style name="Theme.Cinemax.Splash" parent="Theme.SplashScreen">
+    <style name="Theme.HaseebFlix.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/primaryDark</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
-        <item name="postSplashScreenTheme">@style/Theme.Cinemax</item>
+        <item name="postSplashScreenTheme">@style/Theme.HaseebFlix</item>
     </style>
 </resources>

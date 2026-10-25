@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +16,12 @@
  */
 
 plugins {
-    id("cinemax.android.library")
-    id("cinemax.android.library.compose")
-    id("cinemax.android.feature")
+    id("haseebflix.android.library")
+    id("haseebflix.android.library.compose")
+    id("haseebflix.android.feature")
 }
 
-android.namespace = "com.maximillianleonov.cinemax.feature.details"
+android.namespace = "com.haseebno1.haseebflix.feature.details"
 
 dependencies {
     implementation(libs.kotlinx.datetime)

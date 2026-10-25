@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +16,23 @@
  */
 
 plugins {
-    id("cinemax.android.application")
-    id("cinemax.android.application.compose")
-    id("cinemax.android.lint")
-    id("cinemax.android.signingconfig")
-    id("cinemax.apikey.provider")
+    id("haseebflix.android.application")
+    id("haseebflix.android.application.compose")
+    id("haseebflix.android.lint")
+    id("haseebflix.android.signingconfig")
+    id("haseebflix.apikey.provider")
 
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.dagger.hilt.android)
 }
 
 android {
-    namespace = "com.maximillianleonov.cinemax"
+    namespace = "com.haseebno1.haseebflix"
 
     defaultConfig {
-        applicationId = "com.maximillianleonov.cinemax"
-        versionCode = 7
-        versionName = "1.0.6"
+        applicationId = "com.haseebno1.haseebflix"
+        versionCode = 8
+        versionName = "1.1.0"
     }
 
     buildFeatures.buildConfig = true

@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +16,7 @@
  */
 
 plugins {
-    id("cinemax.jvm.library")
+    id("haseebflix.jvm.library")
 }
 
 dependencies {
