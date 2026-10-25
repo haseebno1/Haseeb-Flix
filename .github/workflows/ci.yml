@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -16,9 +17,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    env:
-      # The build needs a TMDB key to compile; CI only checks that it builds, so any placeholder works.
-      HASEEBFLIX_API_KEY: ci-placeholder
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -26,7 +24,20 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v4
+      
+      - name: Create local.properties
+        run: |
+          echo "haseebflix.apikey=ci-placeholder" > local.properties
+          echo "haseebflix.player.baseurl=https://embed.vidrift.net" >> local.properties
+
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
+        
       - name: Unit tests
         run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
