@@ -133,7 +133,11 @@ Issues and pull requests are welcome. CI builds the app and runs the unit tests 
 
 ## Store submission preparation
 
-The evidence-based draft submission package is in [`store-submission/`](store-submission/README.md). It is preparation material only. The current CI release-variant APK is debug-signed and uses a placeholder TMDB key; it is not a production release. The tagged release workflow requires signing credentials and a TMDB key. No release tag or store submission has been made. Do not publish until the playback provider and content rights are independently resolved.
+HaseebFlix `v1.1.0` is tagged and published as a signed release, with `HaseebFlix-v1.1.0.apk` and its `.sha256` checksum attached. Store submission to Orion Store has been filed from the draft package in [`store-submission/`](https://github.com/haseebno1/Haseeb-Flix/blob/main/store-submission/README.md).
+
+Playback is delivered by the VidRift embed provider, whose written reply records permission to embed its player for free. VidRift does not own or store the media, so title-level upstream rights remain unverified; that is tracked in [`docs/content-authorization.md`](https://github.com/haseebno1/Haseeb-Flix/blob/main/docs/content-authorization.md) and does not block submission.
+
+Remaining work is listing preparation for further stores. GitHub Releases and Obtainium already provide working direct distribution.
 
 ## License and credits
 
