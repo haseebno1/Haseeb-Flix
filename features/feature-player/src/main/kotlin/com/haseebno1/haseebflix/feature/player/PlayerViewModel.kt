@@ -74,6 +74,9 @@ class PlayerViewModel @Inject constructor(
 
 private val AppPlayerOptions = PlayerOptions(
     brand = "HaseebFlix",
-    brandColorHex = "E50914",
+    brandColorHex = "e50914",
+    brandLogoUrl = "https://i.postimg.cc/fLt3VcZs/logo.png",
+    watermark = true,
+    showTitle = true,
     showExit = true
 )
