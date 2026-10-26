@@ -114,7 +114,7 @@
     <li>Free<small>Price</small></li>
     <li>Android 6.0+<small>Works on</small></li>
     <li id="factSize" hidden><span id="sizeText"></span><small>Size</small></li>
-    <li id="factVersion">1.0.6<small>Version</small></li>
+    <li id="factVersion"><span id="versionText">1.1.0</span><small>Version</small></li>
   </ul>
 
   <div class="dl-row">
@@ -192,8 +192,9 @@
 
 <script>
 (function () {
-  // ---- Settings: change these two lines if your file has a different name or location ----
-  var APK_URL = "HaseebFlix.apk";
+  var RELEASE_API_URL = "https://api.github.com/repos/haseebno1/Haseeb-Flix/releases/latest";
+  var RELEASES_URL = "https://github.com/haseebno1/Haseeb-Flix/releases/latest";
+  var APK_URL = null;
   var FILE_NAME = "HaseebFlix.apk";
 
   var $ = function (id) { return document.getElementById(id); };
@@ -203,11 +204,34 @@
 
   if (!/Android/i.test(navigator.userAgent)) $("notAndroid").hidden = false;
 
-  // Show the file size if the server tells us.
-  fetch(APK_URL, { method: "HEAD" }).then(function (r) {
-    var len = r.ok && +r.headers.get("Content-Length");
-    if (len) { $("sizeText").textContent = mb(len) + " MB"; $("factSize").hidden = false; }
-  }).catch(function () {});
+  async function loadLatestRelease() {
+    var response = await fetch(RELEASE_API_URL, {
+      headers: { Accept: "application/vnd.github+json" }
+    });
+    if (!response.ok) throw new Error("Release metadata unavailable");
+
+    var release = await response.json();
+    var asset = (release.assets || []).find(function (item) {
+      return item && typeof item.name === "string" && /\.apk$/i.test(item.name) &&
+        typeof item.browser_download_url === "string";
+    });
+    if (!asset) throw new Error("No APK in the latest release");
+
+    APK_URL = asset.browser_download_url;
+    FILE_NAME = asset.name;
+    var version = typeof release.tag_name === "string" ? release.tag_name.replace(/^v/i, "") : "";
+    if (version) $("versionText").textContent = version;
+    if (Number.isFinite(asset.size) && asset.size > 0) {
+      $("sizeText").textContent = mb(asset.size) + " MB";
+      $("factSize").hidden = false;
+    }
+    return asset;
+  }
+
+  var releaseReady = loadLatestRelease();
+  releaseReady.catch(function () {
+    status.textContent = "Latest release details could not be loaded. Tap the button to open GitHub releases.";
+  });
 
   function setIdle(text) {
     btn.classList.remove("busy", "unknown");
@@ -238,17 +262,21 @@
     setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
   }
   // Fallback: let the browser download it itself (no progress bar, but it still works).
-  function browserDownload() {
+  function browserDownload(url) {
     var a = document.createElement("a");
-    a.href = APK_URL; a.download = FILE_NAME; document.body.appendChild(a); a.click(); a.remove();
+    a.href = url || APK_URL || RELEASES_URL;
+    a.download = FILE_NAME; document.body.appendChild(a); a.click(); a.remove();
     setIdle("Download again");
-    status.textContent = "Your browser is downloading the file. Check your notifications, then follow the steps below.";
+    status.textContent = APK_URL
+      ? "Your browser is downloading the file. Check your notifications, then follow the steps below."
+      : "GitHub releases opened. Choose the latest APK asset to download.";
   }
 
   async function start() {
     setBusy(); label.textContent = "Starting\u2026"; status.textContent = "";
     controller = new AbortController();
     try {
+      await releaseReady;
       var res = await fetch(APK_URL, { signal: controller.signal });
       if (!res.ok || !res.body) throw new Error("unavailable");
       var total = +res.headers.get("Content-Length") || 0;
@@ -263,7 +291,7 @@
       status.innerHTML = "<strong>Done.</strong> Open the downloaded file to install, then follow the steps below.";
     } catch (e) {
       if (e && e.name === "AbortError") { setIdle("Download for Android"); status.textContent = "Download cancelled."; return; }
-      browserDownload();
+      browserDownload(APK_URL || RELEASES_URL);
     }
   }
 

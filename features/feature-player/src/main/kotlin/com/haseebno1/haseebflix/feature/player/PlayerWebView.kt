@@ -119,9 +119,9 @@ internal fun PlayerWebView(
                     mediaPlaybackRequiresUserGesture = false
                     javaScriptCanOpenWindowsAutomatically = true
                     setSupportMultipleWindows(false)
-                    allowFileAccess = true
+                    allowFileAccess = false
                     allowContentAccess = true
-                    mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                    mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
                     userAgentString = userAgentString.replace("; wv", "").replace("Version/4.0 ", "")
                 }
                 webViewClient = object : WebViewClient() {
@@ -129,11 +129,11 @@ internal fun PlayerWebView(
                         view: WebView,
                         request: WebResourceRequest
                     ): Boolean {
-                        val url = request.url.toString()
-                        val isHostPage = url == "$hostPageOrigin/" ||
-                            url.startsWith("$hostPageOrigin/") ||
-                            url == "about:blank"
-                        return !isHostPage && request.isForMainFrame
+                        return request.isForMainFrame && !PlayerNavigationPolicy.isAllowedMainFrame(
+                            url = request.url.toString(),
+                            hostPageOrigin = hostPageOrigin,
+                            providerOrigin = embedOrigin
+                        )
                     }
 
                     override fun onReceivedError(

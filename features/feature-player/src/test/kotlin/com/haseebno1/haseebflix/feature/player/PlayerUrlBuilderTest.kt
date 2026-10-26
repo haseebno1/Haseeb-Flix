@@ -133,4 +133,5 @@ class PlayerUrlBuilderTest {
         assertTrue("var ORIGIN = \"https://embed.vidrift.net\";" in html)
         assertFalse(" sandbox" in html)
     }
+
 }
