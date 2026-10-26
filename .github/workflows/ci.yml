@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      
+      - name: Create local.properties
+        run: |
+          echo "haseebflix.apikey=ci-placeholder" > local.properties
+          echo "haseebflix.player.baseurl=https://embed.vidrift.net" >> local.properties
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Build optimized release APK (CI debug signing)
+        run: ./gradlew assembleRelease --stacktrace
+        
+      - name: Unit tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload optimized release APK (CI debug signing)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-debug-signed
+          path: app/build/outputs/apk/release/*.apk
+          if-no-files-found: error

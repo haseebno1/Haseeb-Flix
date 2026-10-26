@@ -1,0 +1,14 @@
+HaseebFlix
+Copyright 2026 Abdul Haseeb
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+HaseebFlix is derived from the open-source Android project "Cinemax" by
+Afig Aliyev (https://github.com/MaximillianLeonov/Cinemax - Apache License 2.0),
+Copyright 2022 Afig Aliyev. The original copyright and license notices are
+retained in each source file, and files changed in this project carry an
+additional "Modifications Copyright 2026 Abdul Haseeb" line, as required by
+section 4 of the Apache License.
+
+Movie and TV metadata and images are provided by The Movie Database (TMDB).
+This product uses the TMDB API but is not endorsed or certified by TMDB.

@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,19 +31,19 @@ class ApiKeyProviderConventionPlugin : Plugin<Project> {
             }
         }
 
-        val cinemaxApiKey = checkNotNull(
-            localProperties.getProperty("cinemax.apikey") ?: System.getenv("CINEMAX_API_KEY")
+        val haseebflixApiKey = checkNotNull(
+            localProperties.getProperty("haseebflix.apikey") ?: System.getenv("HASEEBFLIX_API_KEY")
         )
 
-        val playerBaseUrl = localProperties.getProperty("cinemax.player.baseurl")
-            ?: System.getenv("CINEMAX_PLAYER_BASE_URL")
+        val playerBaseUrl = localProperties.getProperty("haseebflix.player.baseurl")
+            ?: System.getenv("HASEEBFLIX_PLAYER_BASE_URL")
             ?: DefaultPlayerBaseUrl
 
         extensions.configure<BaseAppModuleExtension> {
-            defaultConfig.buildConfigField("String", "CINEMAX_API_KEY", "\"$cinemaxApiKey\"")
+            defaultConfig.buildConfigField("String", "HASEEBFLIX_API_KEY", "\"$haseebflixApiKey\"")
             defaultConfig.buildConfigField(
                 "String",
-                "CINEMAX_PLAYER_BASE_URL",
+                "HASEEBFLIX_PLAYER_BASE_URL",
                 "\"$playerBaseUrl\""
             )
         }

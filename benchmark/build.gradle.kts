@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +16,10 @@
  */
 
 plugins {
-    id("cinemax.android.benchmark")
+    id("haseebflix.android.benchmark")
 }
 
-android.namespace = "com.maximillianleonov.cinemax.benchmark"
+android.namespace = "com.haseebno1.haseebflix.benchmark"
 
 dependencies {
     implementation(libs.bundles.androidx.benchmark)

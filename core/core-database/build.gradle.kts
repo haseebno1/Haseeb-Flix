@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +16,12 @@
  */
 
 plugins {
-    id("cinemax.android.library")
+    id("haseebflix.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
 
-android.namespace = "com.maximillianleonov.cinemax.core.database"
+android.namespace = "com.haseebno1.haseebflix.core.database"
 
 dependencies {
     implementation(libs.kotlinx.serialization.json)

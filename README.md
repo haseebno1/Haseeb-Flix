@@ -1,117 +1,144 @@
-
 <p align="center">
-  <img src="screenshots/logo.png" alt="Haseeb-Flix Logo" width="140" />
+  <img src="fastlane/metadata/android/en-US/images/icon.png" alt="HaseebFlix icon" width="120">
 </p>
 
-<h1 align="center">Haseeb-Flix</h1>
+<h1 align="center">HaseebFlix</h1>
 
 <p align="center">
-  <b>Your ultimate ad-free Android app to stream movies, watch TV show episodes, and discover trending entertainment for free.</b>
-</p>
-
-<p align="center">
-  <a href="https://github.com/haseebno1/Haseeb-Flix/releases/latest/download/app-release.apk">
-    <img src="https://img.shields.io/badge/📥_Download_APK-v1.0.6-E50914?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" />
-  </a>
+  Discover movies and TV shows, keep a watchlist, and play titles in the app through a third-party provider.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Android_8.0+-3DDC84?logo=android&logoColor=white" alt="Android" />
-  <img src="https://img.shields.io/badge/Streaming-100%25_Free-00C853" alt="Free Streaming" />
-  <img src="https://img.shields.io/badge/Ads-Zero_Ads-E50914" alt="No Ads" />
-  <img src="https://img.shields.io/badge/Version-1.0.6-E50914" alt="Version 1.0.6" />
+  <a href="https://github.com/haseebno1/Haseeb-Flix/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/haseebno1/Haseeb-Flix?label=release"></a>
+  <img alt="Android 6.0+" src="https://img.shields.io/badge/Android-6.0%2B-3DDC84?logo=android&logoColor=white">
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
 </p>
 
----
+## Features
 
-## 🎬 Why Choose Haseeb-Flix?
+- Browse popular, top-rated and upcoming movies and TV shows
+- Search movies and TV series
+- Details, cast and crew, and season and episode selection for series
+- Watchlist stored in app data, no account needed
+- In-app playback through a third-party embed provider (see [Where content comes from](#where-content-comes-from))
+- Dark Jetpack Compose interface
 
-* 🍿 **Instant Movie & TV Streaming:** Stream trending movies and full TV show episodes directly on your Android device with seamless playback.
-* 📺 **One-Tap Episode Playback:** Select seasons and episodes effortlessly with the built-in *Play S1 E1* player for TV series.
-* 🔍 **Smart Content Search:** Search across thousands of titles with instant filters for movies and TV shows.
-* ❤️ **Personal Watchlist:** Bookmark your favorite movies and shows to build a custom streaming queue.
-* 🛡️ **Ad-Free & No Subscription:** Enjoy a premium, dark-themed streaming interface with zero popups, zero forced ads, and no account required.
+## Install
 
----
+Download the signed APK from the [latest release](https://github.com/haseebno1/Haseeb-Flix/releases/latest) (`HaseebFlix-vX.Y.Z.apk`) and open it. Android will ask you to allow installs from your browser or file manager the first time.
 
-## 📲 How to Install & Watch (Android APK)
+To check the download, compare it with the `.sha256` file attached to the same release:
 
-1. Tap the **[Download APK](https://github.com/haseebno1/Haseeb-Flix/releases/latest/download/app-release.apk)** badge at the top of this page on your Android device.
-2. Open the downloaded `.apk` file from your browser downloads or file manager.
-3. If prompted by your device, enable **"Install from unknown sources"**.
-4. Open **Haseeb-Flix** and start streaming immediately!
+```sh
+sha256sum -c HaseebFlix-vX.Y.Z.apk.sha256
+```
 
----
+You can also add `https://github.com/haseebno1/Haseeb-Flix` to an update tracker such as [Obtainium](https://github.com/ImranR98/Obtainium) to be notified of new releases.
 
-## 📱 App Screenshots
+> **Upgrading from an older build?** The application ID changed to `com.haseebno1.haseebflix` in 1.1.0. It installs next to the old app and does not carry over your watchlist.
 
-<table>
-  <tr>
-    <td align="center"><img src="screenshots/01_home.jpg" width="200" /><br /><sub><b>Home Stream Feed</b></sub></td>
-    <td align="center"><img src="screenshots/02_movie_details.jpg" width="200" /><br /><sub><b>Movie Stream Player</b></sub></td>
-    <td align="center"><img src="screenshots/03_discover.jpg" width="200" /><br /><sub><b>Discover Titles</b></sub></td>
-    <td align="center"><img src="screenshots/04_search_movies.jpg" width="200" /><br /><sub><b>Search Movies</b></sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/05_search_tv.jpg" width="200" /><br /><sub><b>Search TV Series</b></sub></td>
-    <td align="center"><img src="screenshots/06_wishlist.jpg" width="200" /><br /><sub><b>Saved Watchlist</b></sub></td>
-    <td align="center"><img src="screenshots/07_tv_details.jpg" width="200" /><br /><sub><b>Seasons & Episode Play</b></sub></td>
-    <td align="center"><img src="screenshots/08_settings.jpg" width="200" /><br /><sub><b>Settings & Info</b></sub></td>
-  </tr>
-</table>
+## Screenshots
 
----
+<p>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" width="19%" alt="Home">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="19%" alt="Movie details">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" width="19%" alt="Discover">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" width="19%" alt="Search movies">
+</p>
+<p>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.jpg" width="19%" alt="Search TV series">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.jpg" width="19%" alt="Watchlist">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7.jpg" width="19%" alt="TV series details">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/8.jpg" width="19%" alt="Settings">
+</p>
 
-<details>
-<summary><b>🛠️ Technical Specifications & Build Instructions (Click to Expand)</b></summary>
+## Where content comes from
 
-<br />
+- **Catalogue data** (titles, posters, descriptions, cast) comes from [The Movie Database (TMDB)](https://www.themoviedb.org/).
+- **Video playback** comes from a third-party embed provider, loaded in a web view. The base URL defaults to `https://embed.vidrift.net` and can be changed at build time (see below).
+- We don't host the content on our servers — we're just an aggregator. Think of us as a friendly guide: we point you to movies and shows that are hosted and streamed by third-party providers, so the credit (and any quirks) belongs to them, not us.
+- The provider operates the playback page and may show its own ad. Its data practices and the authorization for any particular stream have not been independently verified; publication remains on hold until the publisher obtains written content-rights confirmation.
 
-### Tech Stack
+## Privacy
 
-| Layer | Technology |
-| --- | --- |
-| **Language** | Kotlin |
-| **UI Framework** | Jetpack Compose |
-| **Target Platform** | Android |
-| **Media Metadata** | [TMDB API](https://www.themoviedb.org/documentation/api) |
+HaseebFlix has no app account flow. The Room database (watchlist and catalogue cache) is included in cloud backup and device transfer; other app files and preferences are excluded by explicit Android backup rules. The TMDB key is compiled into the app and is not stored in backup data. No direct analytics or advertising SDK was identified in the inspected app source, but the third-party playback page and its network behavior have not been audited. The app contacts TMDB and its image CDN for catalogue information, and the playback provider when a video is started; those services can receive network metadata such as your IP address and requested title identifiers.
 
-### Building from Source
+## Building from source
 
-1. **Clone Repository**
-   ```bash
-   git clone [https://github.com/haseebno1/Haseeb-Flix.git](https://github.com/haseebno1/Haseeb-Flix.git)
-   cd Haseeb-Flix
+Requirements: JDK 17 and the Android SDK (Android Studio recommended).
+
+```sh
+git clone https://github.com/haseebno1/Haseeb-Flix.git
+cd Haseeb-Flix
+```
+
+Provide a [TMDB API key](https://developer.themoviedb.org/docs/getting-started). Either add it to `local.properties` (git-ignored):
+
+```properties
+haseebflix.apikey=YOUR_TMDB_API_KEY
+# optional: use a different embed provider (must be https)
+haseebflix.player.baseurl=https://your-provider.example
+```
+
+or export `HASEEBFLIX_API_KEY` (and optionally `HASEEBFLIX_PLAYER_BASE_URL`) in your environment. Then:
+
+```sh
+./gradlew assembleDebug     # debug APK in app/build/outputs/apk/debug
+./gradlew testDebugUnitTest # unit tests
+```
+
+Release builds are signed using a git-ignored `keystore.properties` in the project root with the keys `storeFile`, `storePassword`, `keyAlias` and `keyPassword`. Without it the build falls back to the debug key, so never distribute that APK.
+
+### Project layout
 
 ```
- 2. **Set API Keys**
-   Add your TMDB API key inside local.properties:
-   ```properties
-   TMDB_API_KEY=your_api_key_here
-   
+app/          Application module, navigation host and Hilt entry point
+core/         Shared modules: common, data, database, datastore, network, domain, model, ui, designsystem, navigation
+features/     Screens: home, search, wishlist, settings, list, details, player
+benchmark/    Macrobenchmark and baseline profile generation
+build-logic/  Gradle convention plugins (haseebflix.*)
+config/       Detekt and Spotless configuration
+fastlane/     Store metadata (descriptions, changelogs, screenshots)
+```
+
+## Releasing
+
+Releases are built by GitHub Actions when a version tag is pushed.
+
+1. Bump `versionCode` and `versionName` in `app/build.gradle.kts`.
+2. Add `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt` (500 bytes max). It becomes the release notes.
+3. Merge to `main`, then tag and push:
+
+   ```sh
+   git tag v1.1.0 && git push origin v1.1.0
    ```
- 3. **Compile & Run**
-   Open in Android Studio (JDK 17+) and run on an Android emulator or test device (**Run ▶ Run 'app'**).
-### Directory Structure
-```text
-Haseeb-Flix/
-├── app/            # Primary Android source module
-├── assets/         # App icons and graphics
-├── screenshots/    # Preview images for documentation
-└── README.md
 
-```
-</details>
+The workflow checks that the tag equals `versionName`, builds a signed release APK, verifies it is not debug-signed, and publishes `HaseebFlix-vX.Y.Z.apk` and a `.sha256` file to the release. Tags with a suffix such as `v1.2.0-rc1` are marked as pre-releases.
 
+Add these repository secrets once under **Settings → Secrets and variables → Actions**:
 
-## 👨‍💻 Author
-Developed by **Abdul Haseeb** — *Lead Mobile & Application Architect*
- * **GitHub:** @haseebno1
-## 📜 Acknowledgements & Legal Notice
-Media catalog data is powered by **The Movie Database (TMDB)**.
-> **Disclaimer:** *Haseeb-Flix utilizes the TMDB API to fetch catalog information and media metadata but is independent and not officially endorsed or certified by TMDB.*
-> 
-<p align="center">
-<b>Enjoying Haseeb-Flix? Give this repository a ⭐ on GitHub to support ongoing development!</b>
-</p>
+| Secret | Value |
+| --- | --- |
+| `ANDROID_KEYSTORE_BASE64` | Your release keystore, base64-encoded (`base64 -w0 release.jks`) |
+| `ANDROID_KEYSTORE_PASSWORD` | Keystore password |
+| `ANDROID_KEY_ALIAS` | Key alias |
+| `ANDROID_KEY_PASSWORD` | Key password |
+| `TMDB_API_KEY` | TMDB API key to embed in the build |
 
+Keep the same keystore for every release; Android refuses updates signed with a different key.
+
+## Contributing
+
+Issues and pull requests are welcome. CI builds the app and runs the unit tests on every pull request.
+
+## Store submission preparation
+
+The evidence-based draft submission package is in [`store-submission/`](store-submission/README.md). It is preparation material only. The current CI release-variant APK is debug-signed and uses a placeholder TMDB key; it is not a production release. The tagged release workflow requires signing credentials and a TMDB key. No release tag or store submission has been made. Do not publish until the playback provider and content rights are independently resolved.
+
+## License and credits
+
+HaseebFlix is licensed under the [Apache License 2.0](LICENSE). It is derived from an Apache-2.0 open-source Android project; the original copyright notices are kept in the source files and [NOTICE](NOTICE) has the attribution and a statement of changes.
+
+Maintained by [Abdul Haseeb](https://github.com/haseebno1).
+
+This product uses the TMDB API but is not endorsed or certified by TMDB.

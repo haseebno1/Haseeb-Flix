@@ -1,10 +1,10 @@
 plugins {
-    id("cinemax.android.library")
-    id("cinemax.android.library.compose")
-    id("cinemax.android.feature")
+    id("haseebflix.android.library")
+    id("haseebflix.android.library.compose")
+    id("haseebflix.android.feature")
 }
 
-android.namespace = "com.maximillianleonov.cinemax.feature.player"
+android.namespace = "com.haseebno1.haseebflix.feature.player"
 
 dependencies {
     implementation(libs.androidx.activity.compose)

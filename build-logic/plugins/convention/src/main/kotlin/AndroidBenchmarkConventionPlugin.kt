@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +18,8 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
 import com.android.build.api.variant.TestAndroidComponentsExtension
 import com.android.build.gradle.TestExtension
-import com.maximillianleonov.cinemax.configureKotlinAndroid
-import com.maximillianleonov.cinemax.libs
+import com.haseebno1.haseebflix.configureKotlinAndroid
+import com.haseebno1.haseebflix.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

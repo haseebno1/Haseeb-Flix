@@ -1,5 +1,6 @@
 /*
  * Copyright 2022 Afig Aliyev
+ * Modifications Copyright 2026 Abdul Haseeb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.maximillianleonov.cinemax.buildlogic"
+group = "com.haseebno1.haseebflix.buildlogic"
 
 dependencies {
     compileOnly(libs.android.gradle.plugin)
@@ -33,51 +34,51 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "cinemax.android.application"
+            id = "haseebflix.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidApplicationCompose") {
-            id = "cinemax.android.application.compose"
+            id = "haseebflix.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "cinemax.android.library"
+            id = "haseebflix.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "cinemax.android.library.compose"
+            id = "haseebflix.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidFeature") {
-            id = "cinemax.android.feature"
+            id = "haseebflix.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("androidBenchmark") {
-            id = "cinemax.android.benchmark"
+            id = "haseebflix.android.benchmark"
             implementationClass = "AndroidBenchmarkConventionPlugin"
         }
         register("androidLint") {
-            id = "cinemax.android.lint"
+            id = "haseebflix.android.lint"
             implementationClass = "AndroidLintConventionPlugin"
         }
         register("androidSigningConfig") {
-            id = "cinemax.android.signingconfig"
+            id = "haseebflix.android.signingconfig"
             implementationClass = "AndroidSigningConfigConventionPlugin"
         }
         register("spotless") {
-            id = "cinemax.spotless"
+            id = "haseebflix.spotless"
             implementationClass = "SpotlessConventionPlugin"
         }
         register("detekt") {
-            id = "cinemax.detekt"
+            id = "haseebflix.detekt"
             implementationClass = "DetektConventionPlugin"
         }
         register("apiKeyProvider") {
-            id = "cinemax.apikey.provider"
+            id = "haseebflix.apikey.provider"
             implementationClass = "ApiKeyProviderConventionPlugin"
         }
         register("jvmLibrary") {
-            id = "cinemax.jvm.library"
+            id = "haseebflix.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
     }

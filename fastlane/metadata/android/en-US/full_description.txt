@@ -1,0 +1,20 @@
+HaseebFlix helps you find movies and TV shows and keep track of what you want to watch.
+
+<b>What it does</b>
+• Browse popular, top-rated and upcoming movies and TV shows
+• Search movies and TV series with instant filters
+• Read details, cast and crew, and pick a season and episode for TV series
+• Save titles to a personal watchlist stored on your device
+• Play a title inside the app through a third-party player provider
+• Dark interface, no account or sign-up required
+
+<b>Where the content comes from</b>
+Titles, posters and descriptions come from The Movie Database (TMDB). We don't host the content on our servers — we're just an aggregator. Think of us as a friendly guide: we point you to movies and shows that are hosted and streamed by third-party providers, so the credit (and any quirks) belongs to them, not us. The third-party player may show its own ad.
+
+<b>Privacy</b>
+HaseebFlix has no app account flow. Your watchlist is stored in app data and may be included in Android backups. The app contacts TMDB and its image CDN for catalogue information. When you start playback, the third-party provider may receive network details such as your IP address and requested title identifiers and may display its own ad.
+
+<b>Open source</b>
+HaseebFlix is free software under the Apache License 2.0. Source code and issue tracker: https://github.com/haseebno1/Haseeb-Flix
+
+This product uses the TMDB API but is not endorsed or certified by TMDB.
