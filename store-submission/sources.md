@@ -4,8 +4,8 @@ Checked 2026-10-26. Official docs may change; recheck immediately before submiss
 
 ## Repository sources
 
-- `app/build.gradle.kts`, manifest, `NetworkModule.kt`, `ApiKeyProviderConventionPlugin.kt`, player sources, Room modules, `.github/workflows/ci.yml`, `.github/workflows/release.yml`, fastlane metadata/assets. Local tree at `cf737a3182aff6846c296eb66134d4d8c66877f1`.
-- GitHub Actions PR build/test state was previously observed green for the branch. The precise run and resulting binary were not re-fetched as part of this document pass; recheck before relying on it.
+- `app/build.gradle.kts`, manifest, `NetworkModule.kt`, `ApiKeyProviderConventionPlugin.kt`, player sources, Room modules, `.github/workflows/ci.yml`, `.github/workflows/release.yml`, fastlane metadata/assets. Current local branch includes the store-submission and authorization records.
+- GitHub Actions PR CI run [40261025705](https://github.com/haseebno1/Haseeb-Flix/actions/runs/40261025705) passed debug build, optimized release-variant build, unit tests, and artifact uploads for remote commit `1067ef33922b4a527d91585e45a2c5745983fb00`. The optimized artifact uses debug signing and a placeholder TMDB key; it is not a distributable release. CI does not run lint, Detekt, or Spotless.
 
 ## Platform/service primary sources
 
@@ -13,7 +13,7 @@ Checked 2026-10-26. Official docs may change; recheck immediately before submiss
 |---|---|---|
 | TMDB API terms and attribution | [TMDB API Terms of Use](https://www.themoviedb.org/api-terms-of-use), [TMDB logos and attribution](https://www.themoviedb.org/about/logos-attribution), [TMDB API FAQ](https://developer.themoviedb.org/docs/faq) | Terms require an approved TMDB logo and prominent disclaimer in the app; FAQ says noncommercial use requires attribution and commercial use requires contacting TMDB. Publisher must establish applicable status. |
 | Android backup behavior | [Android Auto Backup docs](https://developer.android.com/identity/data/autobackup) | App now uses legacy and API 31+ rules to include only its Room database for cloud backup/device transfer; verify built manifest and actual restore on supported OS versions. |
-| Playback provider | [VidRift public embed page](https://vidrift.net/) | Provider says it indexes/relays publicly reachable media and public embeds carry an ad. This self-description is not proof of licensing or a full privacy statement; no detailed privacy page was found in public docs. |
+| Playback provider | [VidRift public embed page](https://vidrift.net/); publisher-supplied email dated 2026-10-26 recorded in [`docs/content-authorization.md`](../docs/content-authorization.md) | Email says the HaseebFlix embed is allowed and free, requires framing without sandbox and retaining the public-embed ad, and states VidRift does not own/store media. It is not title-level licensing evidence; sender identity and runtime/storage practices are not independently verified. |
 | Obtainium/GitHub releases | [Obtainium project](https://github.com/ImranR98/Obtainium), [GitHub releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) | Direct release distribution is technically plausible; not a store listing or eligibility review |
 | Orion | [Orion Store site](https://www.orionstore.net/about/), [upstream project](https://github.com/RookieEnough/Orion-Store) | Public repo/import/submission flow exists; acceptance requirements and account status not verified |
 | IzzyOnDroid | [Inclusion policy](https://izzyondroid.org/docs/general/AppInclusionPolicy/), [FAQ](https://izzyondroid.org/faq/) | FOSS/dependency, APK signature, Fastlane metadata, policy and review apply; app includes third-party playback and rights are unresolved |
@@ -32,4 +32,4 @@ Official documentation and console-specific requirements are not uniform, and so
 
 ## Local URLs
 
-The app's configured privacy/settings URL is `https://haseebno1.github.io/Haseeb-Flix/`; live content and policy adequacy were not verified. The third-party player host is `https://embed.vidrift.net`; provider ownership, privacy and rights statements were not verified.
+The app's configured privacy/settings URL is `https://haseebno1.github.io/Haseeb-Flix/`; live policy content and adequacy were not verified. The third-party player host is `https://embed.vidrift.net`; embed permission is documented from publisher-supplied email, while sender identity, underlying media rights and provider privacy practices remain unverified.
