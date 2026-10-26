@@ -88,13 +88,17 @@ class PlayerUrlBuilderTest {
             options = PlayerOptions(
                 brand = "B".repeat(40),
                 brandColorHex = "#00d1b2",
+                brandLogoUrl = "https://i.postimg.cc/fLt3VcZs/logo.png",
+                watermark = true,
+                showTitle = true,
                 showExit = true,
                 hide = linkedSetOf(PlayerControl.Server, PlayerControl.Cast)
             )
         )
         assertEquals(
             "https://embed.vidrift.net/embed/movie/1?title=A&brand=${"B".repeat(28)}" +
-                "&brandColor=00d1b2&exit=1&hide=server,cast",
+                "&brandColor=00d1b2&brandLogo=https%3A%2F%2Fi.postimg.cc%2FfLt3VcZs%2Flogo.png" +
+                "&watermark=1&showTitle=1&exit=1&hide=server,cast",
             url
         )
         assertFalse(
