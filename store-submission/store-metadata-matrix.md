@@ -6,13 +6,13 @@ All lengths below are draft counts, including spaces and punctuation. Platform-s
 |---|---|---:|---|
 | App title | HaseebFlix | 10 | Repository/asset confirmed; store acceptance unverified |
 | Short description | Discover films and series, build a watchlist, and watch. | 56 | Draft copy; measure against selected channel's live limit |
-| Developer name | Abdul Haseeb | 12 | Publisher identity must confirm |
+| Developer name | Abdul Haseeb | 12 | Publisher confirmed; use the same name in policy and app About |
 | Package | `com.haseebno1.haseebflix` | — | Repo-confirmed |
 | Version | 1.1.0 (8) | — | Repo-confirmed |
 | Minimum Android | 6.0 / API 23 | — | Repo-confirmed |
-| Support email | `[DEVELOPER_EMAIL]` | — | Publisher action required |
+| Support email | `abdulhaseebno1@gmail.com` | 24 | Publisher confirmed; use the same inbox in policy and app About |
 | Website | `[MARKETING_URL]` | — | Publisher action required |
-| Privacy policy | `[PRIVACY_POLICY_URL]` | — | Publisher action required; live app URL not verified |
+| Privacy policy | `https://haseebno1.github.io/Haseeb-Flix/privacy-policy.html` | — | Page is in this branch; verify public availability after deployment |
 | Category / rating / price / countries | placeholders | — | Channel-specific publisher action |
 
 ## Checked channel-specific text constraints

@@ -17,6 +17,6 @@ Package `com.haseebno1.haseebflix`; version 1.1.0/code 8; Android min API 23; ca
 
 ## Placeholder register — resolve before console entry
 
-`[PRIMARY_CATEGORY]`, `[DEVELOPER_EMAIL]`, `[MARKETING_URL]`, `[PRIVACY_POLICY_URL]`, `[DISTRIBUTION_COUNTRIES]`, `[PRICE]`, `[AGE_RATING]`, `[CONTENT_RIGHTS_EVIDENCE]`.
+`[PRIMARY_CATEGORY]`, `[MARKETING_URL]`, `[DISTRIBUTION_COUNTRIES]`, `[PRICE]`, `[AGE_RATING]`. Publisher display name and privacy contact are confirmed; the VidRift email is recorded, but it does not provide title-level licensing evidence.
 
 Review note: the untracked parent guide is maintained at the user's requested location; this in-repository package is canonical for this branch pending publisher review.

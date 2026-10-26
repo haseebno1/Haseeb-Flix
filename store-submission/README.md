@@ -8,7 +8,7 @@
 - [Store metadata matrix](store-metadata-matrix.md): field lengths and platform-specific unknowns.
 - [Asset checklist](asset-checklist.md): existing assets and missing rights/production evidence.
 - [Privacy and data disclosures](privacy-and-data-disclosures.md): observed data paths and unresolved disclosures.
-- [Privacy policy draft](privacy-policy-draft.md): prepared copy that must not go live until publisher/contact details and provider practices are verified.
+- [Privacy policy candidate](../privacy-policy.html): publisher identity and contact are confirmed; deploy it at the linked URL and verify it is publicly reachable before entering it in a store console.
 - [VidRift embed authorization](../docs/content-authorization.md): publisher-supplied email and its scope/limits.
 - [Review notes](review-notes.md): internal-only reviewer context, gates, and publisher actions.
 - [Release readiness](release-readiness.md): build, signing, API-key and channel readiness.

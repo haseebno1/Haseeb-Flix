@@ -24,15 +24,15 @@ Catalogue information is provided by The Movie Database (TMDB). We don't host th
 
 **TMDB attribution, required in the app:** Use an approved TMDB logo and prominently display: “This product uses the TMDB API but is not endorsed or certified by TMDB.” Place both in an About/Credits-type area, with the logo smaller than HaseebFlix branding. Follow any additional selected-store metadata rules separately.
 
-**Developer display name:** Abdul Haseeb *(publisher to confirm exact legal/display identity)*
+**Developer display name:** Abdul Haseeb
 
 **Category:** [PRIMARY_CATEGORY]
 
-**Support email:** [DEVELOPER_EMAIL]
+**Support email:** abdulhaseebno1@gmail.com
 
 **Website:** [MARKETING_URL]
 
-**Privacy policy URL:** [PRIVACY_POLICY_URL — publisher must verify a public, accurate policy]
+**Privacy policy URL:** https://haseebno1.github.io/Haseeb-Flix/privacy-policy.html *(page will be served after the website branch is updated; verify live before store entry)*
 
 **Countries/regions:** [DISTRIBUTION_COUNTRIES]
 

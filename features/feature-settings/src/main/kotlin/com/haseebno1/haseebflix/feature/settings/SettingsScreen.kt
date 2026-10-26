@@ -255,6 +255,16 @@ private fun DeveloperSpotlightCard(
                     fontSize = 11.sp,
                     color = HaseebFlixTheme.colors.grey
                 )
+                Text(
+                    text = "HaseebFlix is published and operated by Abdul Haseeb (we, us).",
+                    fontSize = 11.sp,
+                    color = HaseebFlixTheme.colors.grey
+                )
+                Text(
+                    text = "Privacy contact: abdulhaseebno1@gmail.com",
+                    fontSize = 11.sp,
+                    color = HaseebFlixTheme.colors.grey
+                )
             }
 
             // GitHub Action Button
