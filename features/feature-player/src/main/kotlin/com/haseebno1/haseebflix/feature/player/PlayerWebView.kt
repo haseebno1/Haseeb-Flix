@@ -72,6 +72,42 @@ internal fun PlayerWebView(
     val currentOnError by rememberUpdatedState(onError)
     var webView by remember { mutableStateOf<WebView?>(null) }
 
+    // Keep the player screen landscape, then return to the user's previous orientation on exit.
+    DisposableEffect(context) {
+        val host = context.findActivity()
+        val previousOrientation = host?.requestedOrientation
+        host?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+        onDispose {
+            if (host != null && previousOrientation != null) {
+                host.requestedOrientation = previousOrientation
+            }
+        }
+    }
+
+    // The whole player route is immersive; restore system bars when leaving it.
+    DisposableEffect(context, lifecycleOwner) {
+        val host = context.findActivity()
+        val controller = host?.let {
+            WindowCompat.getInsetsController(it.window, it.window.decorView)
+        }
+        val hideSystemBars = {
+            controller?.apply {
+                systemBarsBehavior =
+                    WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                hide(WindowInsetsCompat.Type.systemBars())
+            }
+        }
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) hideSystemBars()
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        hideSystemBars()
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+            controller?.show(WindowInsetsCompat.Type.systemBars())
+        }
+    }
+
     // Leave the player's own fullscreen first, then the screen.
     BackHandler(enabled = fullscreenController.isActive) { fullscreenController.exit() }
 
@@ -226,7 +262,6 @@ private class FullscreenController(private val activity: Activity?) {
         isActive = false
 
         (view.parent as? ViewGroup)?.removeView(view)
-        insetsController(host).show(WindowInsetsCompat.Type.systemBars())
         host.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         host.requestedOrientation = previousOrientation
         viewCallback?.onCustomViewHidden()

@@ -85,9 +85,7 @@ private fun PlayerScreen(
                 reloadKey = uiState.reloadKey,
                 onExit = onBackClick,
                 onError = onPlaybackFailed,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .windowInsetsPadding(WindowInsets.safeDrawing)
+                modifier = Modifier.fillMaxSize()
             )
         }
     }
