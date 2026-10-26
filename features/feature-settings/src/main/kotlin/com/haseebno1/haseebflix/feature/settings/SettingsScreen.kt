@@ -20,6 +20,7 @@ package com.haseebno1.haseebflix.feature.settings
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -54,10 +55,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.width
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.haseebno1.haseebflix.core.designsystem.theme.HaseebFlixTheme
@@ -249,6 +253,12 @@ private fun DeveloperSpotlightCard(
                     text = "Where does the content come from? We don't host the content on our servers — we're just an aggregator. Think of us as a friendly guide: we point you to movies and shows that are hosted and streamed by third-party providers, so the credit (and any quirks) belongs to them, not us.",
                     fontSize = 12.sp,
                     color = HaseebFlixTheme.colors.grey
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.tmdb_logo),
+                    contentDescription = "The Movie Database (TMDB)",
+                    modifier = Modifier.height(13.dp).width(100.dp),
+                    contentScale = ContentScale.Fit
                 )
                 Text(
                     text = "This product uses the TMDB API but is not endorsed or certified by TMDB.",
