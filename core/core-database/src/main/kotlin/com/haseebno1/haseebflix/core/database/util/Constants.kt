@@ -92,6 +92,6 @@ internal object Constants {
 
     internal object Urls {
         internal const val HASEEBFLIX_REPO_URL = "https://github.com/haseebno1/Haseeb-Flix"
-        internal const val PRIVACY_POLICY_URL = "https://haseebno1.github.io/Haseeb-Flix/"
+        internal const val PRIVACY_POLICY_URL = "https://haseebno1.github.io/Haseeb-Flix/privacy-policy.html"
     }
 }
