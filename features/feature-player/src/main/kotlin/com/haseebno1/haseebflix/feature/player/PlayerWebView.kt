@@ -72,6 +72,18 @@ internal fun PlayerWebView(
     val currentOnError by rememberUpdatedState(onError)
     var webView by remember { mutableStateOf<WebView?>(null) }
 
+    // Keep the player screen landscape, then return to the user's previous orientation on exit.
+    DisposableEffect(context) {
+        val host = context.findActivity()
+        val previousOrientation = host?.requestedOrientation
+        host?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+        onDispose {
+            if (host != null && previousOrientation != null) {
+                host.requestedOrientation = previousOrientation
+            }
+        }
+    }
+
     // Leave the player's own fullscreen first, then the screen.
     BackHandler(enabled = fullscreenController.isActive) { fullscreenController.exit() }
 
