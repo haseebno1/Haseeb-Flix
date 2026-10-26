@@ -39,6 +39,9 @@ internal enum class PlayerControl(val parameter: String) {
 internal data class PlayerOptions(
     val brand: String? = null,
     val brandColorHex: String? = null,
+    val brandLogoUrl: String? = null,
+    val watermark: Boolean = false,
+    val showTitle: Boolean = false,
     val showExit: Boolean = false,
     val hide: Set<PlayerControl> = emptySet()
 )
@@ -96,6 +99,11 @@ internal class PlayerUrlBuilder(baseUrl: String) {
             options.brandColorHex?.removePrefix("#")?.takeIf { HexColorRegex.matches(it) }?.let {
                 add(BrandColorParameter to it)
             }
+            options.brandLogoUrl?.trim()?.takeIf { it.isNotEmpty() }?.let {
+                add(BrandLogoParameter to it.percentEncode())
+            }
+            if (options.watermark) add(WatermarkParameter to "1")
+            if (options.showTitle) add(ShowTitleParameter to "1")
             if (options.showExit) add(ExitParameter to "1")
             if (options.hide.isNotEmpty()) {
                 add(HideParameter to options.hide.joinToString(",") { it.parameter })
@@ -135,6 +143,9 @@ private const val TvPath = "tv"
 private const val TitleParameter = "title"
 private const val BrandParameter = "brand"
 private const val BrandColorParameter = "brandColor"
+private const val BrandLogoParameter = "brandLogo"
+private const val WatermarkParameter = "watermark"
+private const val ShowTitleParameter = "showTitle"
 private const val ExitParameter = "exit"
 private const val HideParameter = "hide"
 
