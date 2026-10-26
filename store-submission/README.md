@@ -22,8 +22,6 @@ GitHub Actions CI run [40261025705](https://github.com/haseebno1/Haseeb-Flix/act
 
 The existing external guide remains at [`../HaseebFlix Store Guide.md`](../HaseebFlix%20Store%20Guide.md) and is maintained separately at the user's requested location.
 
-## Gate before any publication
-
 ## Gate before further publication
 
 Orion Store submission has been filed. Orion requires no rights evidence, so nothing is pending there. The gate below applies only to stores that ask for more.
