@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Preserve the Room database (including the user's watchlist); other app data is excluded. -->
+    <include domain="database" path="." />
+</full-backup-content>

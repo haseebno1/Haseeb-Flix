@@ -19,7 +19,7 @@
 - Browse popular, top-rated and upcoming movies and TV shows
 - Search movies and TV series
 - Details, cast and crew, and season and episode selection for series
-- Watchlist stored on your device, no account needed
+- Watchlist stored in app data, no account needed
 - In-app playback through a third-party embed provider (see [Where content comes from](#where-content-comes-from))
 - Dark Jetpack Compose interface
 
@@ -56,12 +56,12 @@ You can also add `https://github.com/haseebno1/Haseeb-Flix` to an update tracker
 
 - **Catalogue data** (titles, posters, descriptions, cast) comes from [The Movie Database (TMDB)](https://www.themoviedb.org/).
 - **Video playback** comes from a third-party embed provider, loaded in a web view. The base URL defaults to `https://embed.vidrift.net` and can be changed at build time (see below).
-- HaseebFlix does not host, upload or store any video. What a provider serves, and whether it has the rights to serve it, is outside this project's control. Whatever page the provider loads, including any ads it shows, runs inside the app's player view.
-- You are responsible for making sure that watching a given title is permitted where you live.
+- We don't host the content on our servers — we're just an aggregator. Think of us as a friendly guide: we point you to movies and shows that are hosted and streamed by third-party providers, so the credit (and any quirks) belongs to them, not us.
+- The provider operates the playback page and may show its own ad. Its data practices and the authorization for any particular stream have not been independently verified; publication remains on hold until the publisher obtains written content-rights confirmation.
 
 ## Privacy
 
-HaseebFlix has no accounts and includes no analytics or advertising libraries of its own. The watchlist stays on the device. The app contacts TMDB for catalogue data and the playback provider when a video is started; those services can see your IP address and the title requested.
+HaseebFlix has no app account flow. The Room database (watchlist and catalogue cache) is included in cloud backup and device transfer; other app files and preferences are excluded by explicit Android backup rules. The TMDB key is compiled into the app and is not stored in backup data. No direct analytics or advertising SDK was identified in the inspected app source, but the third-party playback page and its network behavior have not been audited. The app contacts TMDB and its image CDN for catalogue information, and the playback provider when a video is started; those services can receive network metadata such as your IP address and requested title identifiers.
 
 ## Building from source
 
@@ -130,6 +130,10 @@ Keep the same keystore for every release; Android refuses updates signed with a 
 ## Contributing
 
 Issues and pull requests are welcome. CI builds the app and runs the unit tests on every pull request.
+
+## Store submission preparation
+
+The evidence-based draft submission package is in [`store-submission/`](store-submission/README.md). It is preparation material only. The current CI release-variant APK is debug-signed and uses a placeholder TMDB key; it is not a production release. The tagged release workflow requires signing credentials and a TMDB key. No release tag or store submission has been made. Do not publish until the playback provider and content rights are independently resolved.
 
 ## License and credits
 

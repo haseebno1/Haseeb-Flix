@@ -237,6 +237,26 @@ private fun DeveloperSpotlightCard(
                 }
             }
 
+            Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text(
+                    text = "ABOUT & CONTENT SOURCES",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = HaseebFlixTheme.colors.grey,
+                    letterSpacing = 1.sp
+                )
+                Text(
+                    text = "Where does the content come from? We don't host the content on our servers — we're just an aggregator. Think of us as a friendly guide: we point you to movies and shows that are hosted and streamed by third-party providers, so the credit (and any quirks) belongs to them, not us.",
+                    fontSize = 12.sp,
+                    color = HaseebFlixTheme.colors.grey
+                )
+                Text(
+                    text = "This product uses the TMDB API but is not endorsed or certified by TMDB.",
+                    fontSize = 11.sp,
+                    color = HaseebFlixTheme.colors.grey
+                )
+            }
+
             // GitHub Action Button
             Button(
                 onClick = onGitHubClick,
