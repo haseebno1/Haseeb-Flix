@@ -8,6 +8,9 @@
   Discover movies and TV shows, keep a watchlist, and play titles in the app through a third-party provider.
 </p>
 
+[![Get it on Orion Store](https://raw.githubusercontent.com/RookieEnough/Orion-Store/refs/heads/main/assets/orion-badge.png)](https://rookieenough.github.io/Orion-Data/app/?id=haseebflix)
+
+
 <p align="center">
   <a href="https://github.com/haseebno1/Haseeb-Flix/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/haseebno1/Haseeb-Flix?label=release"></a>
   <img alt="Android 6.0+" src="https://img.shields.io/badge/Android-6.0%2B-3DDC84?logo=android&logoColor=white">
